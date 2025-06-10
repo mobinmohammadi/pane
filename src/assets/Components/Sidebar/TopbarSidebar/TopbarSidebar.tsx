@@ -3,21 +3,27 @@ import Dropdown from "../Dropdown/Dropdown";
 
 type Props = {
   setIsShowMenuPanel: (value: boolean) => void;
+  setIsShowLayer: (value: boolean) => void;
 };
 
-export default function TopbarSidebar({ setIsShowMenuPanel }: Props) {
+export default function TopbarSidebar({
+  setIsShowMenuPanel,
+  setIsShowLayer,
+}: Props) {
   const [isShowModalAdmin, setIsShowModalAdmin] = useState<boolean>(false);
 
   const showModalAdmin = () => {
     setIsShowModalAdmin((prev) => !prev);
+    setIsShowLayer(true);
   };
-  useEffect(() => {
-    console.log(isShowModalAdmin);
-  }, [isShowModalAdmin]);
+
   return (
     <div className="pt-5  pr-3 w-full ">
       <div
-        onClick={() => setIsShowMenuPanel(true)}
+        onClick={() => {
+          setIsShowMenuPanel(true);
+          setIsShowLayer(true);
+        }}
         className=" bg-yellow-500 flex justify-center items-center rounded-md cursor-pointer w-7 h-7"
       >
         <svg className="w-5 h-5 ">

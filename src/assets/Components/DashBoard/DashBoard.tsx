@@ -11,7 +11,7 @@ export default function DashBoard() {
         <TitleForBoxesSections title="آمار کلی امروز سایت" />
         <div className="grid grid-cols-1 2xs:grid-cols-2 sm:grid-cols-4 gap-3">
           {dataDashboardMain.map((item) => (
-            <ItemsDashBoard {...item} />
+            <ItemsDashBoard key={item.id} {...item} />
           ))}
         </div>
       </div>
