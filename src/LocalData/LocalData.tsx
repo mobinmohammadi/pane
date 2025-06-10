@@ -1,9 +1,9 @@
 const liMenu = [
    { id : 1 , title : "پیشخوان" , link : "/"},
-   { id : 1 , title : "کاربران" ,  link : "users"},
-   { id : 2 , title : "گزارشات"},
-   { id : 3 , title : "کد های تخفیف"},
-   { id : 4 , title : "تیکت ها"},
+   { id : 1 , title : "کاربران" ,link : "users"},
+   { id : 2 , title : "گزارشات" , link : "/gozareshat"},
+   { id : 3 , title : "کد های تخفیف" , link : "/offers"},
+   { id : 4 , title : "تیکت ها" , link : "/tikets"},
    { id : 5 , title : "محصولات ما" , link : "InventoryBox"},
     
 ]
