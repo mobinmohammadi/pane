@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import url("./assets/Styles/reset.css");
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: DanaDemiBold;
+  src: url("./../public/Dana/woff2/DanaFaNum-DemiBold.woff2");
+}
+
+@theme {
+  --color-primary-dark: #17fb77;
+  --color-dark-menu: #9bb9d6;
+  --color-icon-dark: #47f893;
+  --font-Dana-Demi-bold: "DanaDemiBold";
+  --text-x: 10px;
+  --breakpoint-xs: 400px;
+  --breakpoint-2xs: 480px;
+  --breakpoint-3xs: 780px;
+  --breakpoint-4xs: 640px;
+  --breakpoint-zl: 568px;
+
+  --breakpoint-ls: 267px;
+}
+
+.btn {
+  width: 20px;
+  outline: none;
+  cursor: pointer;
+}
+
+.tranition-custom {
+  transition: all 0.3s ease-in-out;
+  
+}
+.dropdown-content {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 0;
+  color: red;
+  min-width: 180px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content [data-highlighted] {
+  background-color: #e1e1e1;
+  color: black;
+  cursor: pointer;
+}
+
+.dropdown-content > * {
+  padding: 8px 16px;
+}
+
+/* mui */
+
+.MuiTableCell-head {
+}
+
+.MuiTableCell-sizeMedium {
+  /* width: 100px; */
+  /* /* display: flex; */
+  align-items: center !important;
+  justify-content: center !important;
+  /* width: 100% !important; */
+  justify-content: space-between;
+}
+
+td {
+  /* display: fleximportant; */
+  /* justify-content: centerimportant; */
+}
