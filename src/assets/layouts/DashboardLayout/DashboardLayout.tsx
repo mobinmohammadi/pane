@@ -13,11 +13,13 @@ function DashboardLayout() {
       if (wrapperMenuPanel.current) {
         wrapperMenuPanel.current.classList.add("right-0", "opacity-100");
         wrapperMenuPanel.current.classList.remove("right-full", "opacity-0");
+        console.log(isShowMenuPanel);
+        
       }
     } else if (wrapperMenuPanel.current) {
       if(!isShowMenuPanel){
 
-        wrapperMenuPanel.current.classList.remove("right-0", "opacity-100");
+        wrapperMenuPanel.current.classList.remove("right-0");
         wrapperMenuPanel.current.classList.add("-right-full", "opacity-0");
       }
 
@@ -28,11 +30,11 @@ function DashboardLayout() {
     <div className="flex min-h-[100vh]">
       <div
         ref={wrapperMenuPanel}
-        className={` tranition-custom z-20  flex min-h-[100vh] fixed -right-full opacity-0`}
+        className={` tranition-custom z-20  flex min-h-[100vh] fixed -right-full sm:right-0 opacity-100`}
       >
         <Sidebar setIsShowMenuPanel={setIsShowMenuPanel} />
       </div>
-      <main className="flex flex-col sm:mr-[297px] pb-10 mx-auto gap-5  pr-5 pl-5 w-full">
+      <main className="flex flex-col mr-[250px] xl:mr-[297px] pb-10 mx-auto gap-5  pr-5 pl-5 w-full">
         <TopbarSidebar setIsShowMenuPanel={setIsShowMenuPanel} />
         <Outlet />
       </main>

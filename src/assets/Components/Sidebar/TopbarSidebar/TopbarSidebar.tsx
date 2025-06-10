@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 
-
 type Props = {
-  setIsShowMenuPanel : (value : boolean) => void
-}
+  setIsShowMenuPanel: (value: boolean) => void;
+};
 
-export default function TopbarSidebar({setIsShowMenuPanel} : Props) {
+export default function TopbarSidebar({ setIsShowMenuPanel }: Props) {
   const [isShowModalAdmin, setIsShowModalAdmin] = useState<boolean>(false);
 
   const showModalAdmin = () => {
@@ -17,7 +16,10 @@ export default function TopbarSidebar({setIsShowMenuPanel} : Props) {
   }, [isShowModalAdmin]);
   return (
     <div className="pt-5  pr-3 w-full ">
-      <div onClick={() => setIsShowMenuPanel(true)} className="bg-yellow-500 flex justify-center items-center rounded-md cursor-pointer w-7 h-7">
+      <div
+        onClick={() => setIsShowMenuPanel(true)}
+        className=" bg-yellow-500 flex justify-center items-center rounded-md cursor-pointer w-7 h-7"
+      >
         <svg className="w-5 h-5 ">
           <use href="#bars-3"></use>
         </svg>
@@ -27,7 +29,9 @@ export default function TopbarSidebar({setIsShowMenuPanel} : Props) {
           <span className="text-xs sm:text-sm">داشبورد فروشگاه</span>
           <div className="text-xs flex gap-1 tracking-wide">
             <span className="text-x sm:text-sm">مبین محمدی عزیز</span>
-            <span className="dark:text-primary-dark text-x sm:text-sm">خوش آمدید </span>
+            <span className="dark:text-primary-dark text-x sm:text-sm">
+              خوش آمدید{" "}
+            </span>
             <span className="text-red-700 text-xs">🌷</span>
           </div>
         </div>
@@ -41,7 +45,10 @@ export default function TopbarSidebar({setIsShowMenuPanel} : Props) {
             />
             <span className="absolute bg-sky-500 top-0 right-1 h-2 w-2 rounded-full border-solid"></span>
           </div>
-          <div className="flex flex-col gap-1" onClick={() => setIsShowModalAdmin(true)}>
+          <div
+            className="flex flex-col gap-1"
+            onClick={() => setIsShowModalAdmin(true)}
+          >
             <span className="text-x sm:text-xs">مبین محمدی</span>
             <div className="flex gap-1">
               <span className="text-x ">توسعه دهنده فرانت</span>

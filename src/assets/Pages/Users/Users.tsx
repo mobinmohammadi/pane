@@ -1,4 +1,4 @@
-import TableDataCustom from '@/assets/Components/TableDataCustom/TableDataCustom'
+import TableDataCustom from "@/assets/Components/TableDataCustom/TableDataCustom"
 export default function Users() {
   return (
     <div>
