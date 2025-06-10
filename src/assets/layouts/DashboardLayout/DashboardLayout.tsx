@@ -34,7 +34,7 @@ function DashboardLayout() {
       >
         <Sidebar setIsShowMenuPanel={setIsShowMenuPanel} />
       </div>
-      <main className="flex flex-col mr-[250px] xl:mr-[297px] pb-10 mx-auto gap-5  pr-5 pl-5 w-full">
+      <main className="flex flex-col  xl:mr-[297px] pb-10 mx-auto gap-5  pr-5 pl-5 w-full">
         <TopbarSidebar setIsShowMenuPanel={setIsShowMenuPanel} />
         <Outlet />
       </main>
