@@ -9,7 +9,7 @@ type Props = {
 export default function TopbarSidebar({setIsShowMenuPanel} : Props) {
   const [isShowModalAdmin, setIsShowModalAdmin] = useState<boolean>(false);
 
-  const showModalAdmin = (props : Props) => {
+  const showModalAdmin = () => {
     setIsShowModalAdmin((prev) => !prev);
   };
   useEffect(() => {
