@@ -24,7 +24,7 @@ export default function TopbarSidebar({
           setIsShowMenuPanel(true);
           setIsShowLayer(true);
         }}
-        className=" bg-yellow-500 flex justify-center items-center rounded-md cursor-pointer w-7 h-7"
+        className=" bg-yellow-500 flex justify-center sm:hidden items-center rounded-md cursor-pointer w-7 h-7"
       >
         <svg className="w-5 h-5 ">
           <use href="#bars-3"></use>
