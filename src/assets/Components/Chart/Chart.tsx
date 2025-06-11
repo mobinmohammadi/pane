@@ -29,7 +29,7 @@ export default class Example extends PureComponent {
   render() {
     return (
       <div
-        className="text-xs sm:text-xs flex flex-col gap-5"
+        className="text-xs sm:text-xs flex flex-col sm:gap-3 gap-1"
         style={{
           width: "100%",
           direction: "rtl",
