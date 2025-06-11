@@ -71,3 +71,11 @@ td {
   /* display: fleximportant; */
   /* justify-content: centerimportant; */
 }
+
+
+.custom-toast{
+  font-family: DanaDemiBold;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
