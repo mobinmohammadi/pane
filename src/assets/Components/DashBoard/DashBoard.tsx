@@ -6,7 +6,7 @@ import TitleForBoxesSections from "../TitleForBoxesSections/TitleForBoxesSection
 
 export default function DashBoard() {
   return (
-    <div className="flex gap-5 flex-col">
+    <div className="flex flex-col">
       <div className="flex flex-col">
         <TitleForBoxesSections title="آمار کلی امروز سایت" />
         <div className="grid grid-cols-1 2xs:grid-cols-2 sm:grid-cols-4 gap-3">

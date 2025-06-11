@@ -35,7 +35,7 @@ function DashboardLayout({ isShowLayer, setIsShowLayer }: Props) {
       >
         <Sidebar setIsShowMenuPanel={setIsShowMenuPanel} />
       </div>
-      <main className="flex flex-col  xl:mr-[297px] pb-10 mx-auto gap-5  pr-5 pl-5 w-full">
+      <main className="flex flex-col  sm:mr-[250px] pb-10 mx-auto gap-5  pr-5 pl-5 w-full">
         <TopbarSidebar
           setIsShowLayer={setIsShowLayer}
           setIsShowMenuPanel={setIsShowMenuPanel}
