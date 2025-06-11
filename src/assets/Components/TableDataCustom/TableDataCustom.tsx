@@ -5,7 +5,7 @@ import { log } from "node:console";
 
 export default function TableDataCustom() {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [rowPageShow, setRowPageShow] = useState<number>(9);
+  const [rowPageShow, setRowPageShow] = useState<number>(13);
 
   const totalPage = Math.ceil(users.length / rowPageShow);
 
