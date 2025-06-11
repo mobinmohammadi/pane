@@ -5,7 +5,7 @@ import { log } from "node:console";
 
 export default function TableDataCustom() {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [rowPageShow, setRowPageShow] = useState<number>(8);
+  const [rowPageShow, setRowPageShow] = useState<number>(9);
 
   const totalPage = Math.ceil(users.length / rowPageShow);
 
@@ -42,7 +42,7 @@ export default function TableDataCustom() {
           {currentItems.map((user) => (
             <tr
               key={user.id}
-              className="& > *:px-4 & > *:py-2 pt-1 & > *:text-x font-Dana-Demi-bold"
+              className="& > *:px-4 & > *:py-2 pt-1 & > *:text-xs font-Dana-Demi-bold"
             >
               <td className="bg-green-800 text-white border-b-amber-400 border-r-amber-400 border-solid border-b-2 border-r-2">
                 {user.id}
