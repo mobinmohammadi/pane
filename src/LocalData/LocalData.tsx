@@ -334,5 +334,14 @@ const comments = [
   },
 ];
 
+const CommentsHeaderTable = [
+  "شماره",
+  "نام",
+  "ایمیل",
+  "نقش",
+  "مشاهده ",
+  "بن"
 
-export  {liMenu , dataDashboardMain ,users , comments , tableHeadersUser} 
+]
+
+export  {liMenu , dataDashboardMain ,users , comments , tableHeadersUser  , CommentsHeaderTable} 
