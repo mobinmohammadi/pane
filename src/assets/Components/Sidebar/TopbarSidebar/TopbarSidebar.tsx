@@ -46,7 +46,7 @@ export default function TopbarSidebar({
           <div className="border-2 relative border-yellow-400 border-solid rounded-full">
             <img
               className="w-10 h-10 sm:w-14 sm:h-14 cursor-pointer object-cover rounded-full "
-              src="./Admin/Admin.jpg"
+              src="./../Admin/Admin.jpg"
               alt=""
             />
             <span className="absolute bg-sky-500 top-0 right-1 h-2 w-2 rounded-full border-solid"></span>

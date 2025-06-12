@@ -1,20 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { users } from "../../../LocalData/LocalData";
-import { showAlert } from "../ShowSwal/ShowSwal";
 import { log } from "node:console";
+import { ReplayType } from "./TableDataCustomType";
+//@ts-ignore
+import { tableHeaders } from "../../../LocalData/LocalData";
+import Th from "./Th";
+import TrForTicket from "./TrForTicket";
+import TrForUser from "./TrForUsers";
+import { useLocation, useParams } from "react-router-dom";
 
-export default function TableDataCustom() {
+type CommentType = {
+  id: number;
+  name: string;
+  email: string;
+  text?: string;
+  rating?: number;
+  date?: string;
+  reply?: ReplayType;
+};
+
+type Props = {
+  headers: string[];
+  data: CommentType[];
+};
+
+export default function TableDataCustom({ data, headers }: Props) {
+  const location = useLocation();
+  const pathAfterPanel = location.pathname.split("/")[1];
+
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [rowPageShow, setRowPageShow] = useState<number>(13);
 
-  const totalPage = Math.ceil(users.length / rowPageShow);
+  const totalPage = Math.ceil(data.length / rowPageShow);
 
   const handlePageForShow = (sum: number) => {
     setCurrentPage(sum);
   };
+  console.log();
 
   const startIndex = (currentPage - 1) * rowPageShow;
-  const currentItems = users.slice(startIndex, startIndex + rowPageShow);
+  const currentItems = data.slice(startIndex, startIndex + rowPageShow);
 
   const handlePageForPrev = () => {
     setCurrentPage((prev) => prev - 1);
@@ -23,48 +48,24 @@ export default function TableDataCustom() {
   const handlePageForNext = () => {
     setCurrentPage((prev) => prev + 1);
   };
-  console.log("ljndf");
 
   return (
     <div className="overflow-x-auto pb-10 ">
       <table className="min-w-full   dark:bg-[#212d45] bg-white  rounded-sm  text-right">
         <thead className="  dark:bg-[#2b3547d1] dark:text-white border-b-2 dark:border-b-2 border-sky-800 border-solid">
           <tr className="& > *:text-x & > *:text-sm & > *:px-4 & > *:py-2 ">
-            <th className="">شماره</th>
-            <th className="">نام</th>
-            <th className="">ایمیل</th>
-            <th className="">نقش</th>
-            <th className="">ویرایش</th>
-            <th className="">بن</th>
+            {pathAfterPanel == "users" ? headers.map((title: string, index: number) => (
+                  <Th key={index + 1}>{title}</Th>
+                ))
+              : headers.map((title: string, index: number) => (
+                  <Th key={index + 1}>{title}</Th>
+                ))}
           </tr>
         </thead>
-        <tbody className=" dark:text-dark-menu">
-          {currentItems.map((user) => (
-            <tr
-              key={user.id}
-              className="& > *:px-4 & > *:py-2 pt-1 & > *:text-xs font-Dana-Demi-bold"
-            >
-              <td className="bg-green-800 text-white border-b-amber-400 border-r-amber-400 border-solid border-b-2 border-r-2">
-                {user.id}
-              </td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.role == 1 ? "ادمین" : "کاربر"}</td>
-              <td>
-                <svg
-                  onClick={() => showAlert(user)}
-                  className="w-5 h-5 cursor-pointer hover:text-sky-600 mr-2"
-                >
-                  <use href="#paint-brush"></use>
-                </svg>
-              </td>
-              <td className="px-4 py-2 cursor-pointer ">
-                <svg className="w-5 h-5 dark:text-red-600 hover:text-red-600 transition-all">
-                  <use href="#trash"></use>
-                </svg>
-              </td>
-            </tr>
-          ))}
+        <tbody className=" dark:text-dark-menu ">
+          {pathAfterPanel == "users"
+            ? currentItems.map((user) => <TrForUser {...user} />)
+            : currentItems.map((user) => <TrForTicket {...user} />)}
         </tbody>
       </table>
       <div className="flex items-center justify-center mt-5 gap-2">
